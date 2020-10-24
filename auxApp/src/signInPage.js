@@ -1,9 +1,7 @@
-import { NunitoSans_600SemiBold } from '@expo-google-fonts/dev';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Image} from 'react-native';
-import logo from '../images/logo.png';
-
+import Button from './button';
 
 function SignInPage(props){
   return(
@@ -18,15 +16,8 @@ function SignInPage(props){
 function Title(){
   return(
 
-    <Text style={styles.title}><Image href="../images/logo.png"></Image> AUX </Text>
-  )
-}
-
-function Button(props){
-  return(
-    <View style={styles.button}>
-      <Text style={styles.buttonText}>{props.button}</Text>
-    </View>
+    //add logo here
+    <Text style={styles.title}> AUX </Text>
   )
 }
 
@@ -39,25 +30,10 @@ const styles = StyleSheet.create({
   },
   
   title: {
-    fontFamily: 'Nunito, sans-serif',
     fontSize:100,
     color:'#f9f9f9',
     marginBottom: '10%',
     textAlign: 'center',
-  },
-
-  button:{
-    backgroundColor: '#292929',
-    paddingTop:'5%',
-    paddingRight: '15%',
-    paddingLeft:'15%',
-    paddingBottom:'5%',
-    marginBottom:'10%',
-    borderRadius:30,
-  },
-
-  buttonText:{
-    color:'#f9f9f9',
   },
 
 });
