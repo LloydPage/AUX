@@ -4,20 +4,26 @@ import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
 
 export default function App() {
   return (
-    <View style={{flex:1,}}>
-      <Text style={{fontSize:"40px"}}>Listen Now: </Text>
-      <ScrollView contentContainerStyle={styles.container}>
-        <Rooms roomName="Jazz" likesNum="200" thumbsUpNum="10"/>
-        <Rooms roomName="Soul" likesNum="300" thumbsUpNum="50"/>
-        <Rooms roomName="Groove" likesNum="1200" thumbsUpNum="500"/>
-        <Rooms roomName="Party Songs" likesNum="12345" thumbsUpNum="1000"/>
-      </ScrollView>
-      <View style={styles.bottomButton}>
-        <Button name="Listen"/>
-        <Button name="DJ"/>
-      </View> 
-    </View>
+    <RoomsList/>
   )
+}
+
+function RoomsList(props){
+  return(
+    <View style={{flex:1,}}>
+        <Text style={{fontSize:"40px"}}>Listen Now: </Text>
+        <ScrollView contentContainerStyle={styles.container}>
+          <Rooms roomName="Jazz" likesNum="200" thumbsUpNum="10"/>
+          <Rooms roomName="Soul" likesNum="300" thumbsUpNum="50"/>
+          <Rooms roomName="Groove" likesNum="1200" thumbsUpNum="500"/>
+          <Rooms roomName="Party Songs" likesNum="12345" thumbsUpNum="1000"/>
+        </ScrollView>
+        <View style={styles.bottomButton}>
+          <Button name="Listen"/>
+          <Button name="DJ"/>
+        </View> 
+      </View>
+    )
 }
 
 function Rooms(props){
