@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Image} from 'react-native';
 import logo from '../images/logo.png';
-//import {useFonts, NunitoSans_600SemiBold} from "@expo-google-fonts/dev";
+
 
 function SignInPage(props){
   return(

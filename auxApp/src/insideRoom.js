@@ -2,13 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Image, Button } from 'react-native';
 import RoomsList from './RoomsList'
 
-export default function App() {
-  return (
-    <RoomsList/>
-  )
-}
-
-function StartDJ(props){
+function InsideRoom(props){
   return(
     <View>
       <Text style={styles.headline}>{props.username}</Text>
@@ -22,3 +16,5 @@ const styles = StyleSheet.create({
     marginTop:40,
   }
 });
+
+export default InsideRoom;
