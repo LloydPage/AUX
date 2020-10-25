@@ -1,13 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image, TouchableHighlight } from 'react-native';
 import Footer from "./footer";
 import Header from "./header";
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 function RoomsList(props){
   return(
     <View style={styles.container}>
         <Header roomName="TEST"/>
-        <RoomsContainer/>
+          <RoomsContainer {...props}/>
       <Footer/>
       </View>
     )
@@ -15,11 +17,16 @@ function RoomsList(props){
 
 function Rooms(props){
   return (
+  <TouchableHighlight
+    activeOpacity={0.6}
+    underlayColor="#DDDDDD"
+    onPress={() => props.navigation.navigate("InsideRoom")}>
+
     <View style={styles.roomsStyle}>
       <Text style={styles.roomsName}>{props.roomName}</Text> 
       <View style={styles.interaction}>
         <View style={styles.nPeople}>     
-          <Image source={{uri:"http://www.integriward.com/wp-content/uploads/2015/04/people-icon.png"}} style={styles.people}/>
+          <Image source={{uri:"https://thumbs.dreamstime.com/b/person-icon-flat-style-man-symbol-person-icon-flat-style-man-symbol-isolated-white-background-simple-people-abstract-icon-118611127.jpg"}} style={styles.people}/>
           <Text style={styles.peopleText}>{props.likesNum} </Text>
         </View>
         <View style={styles.nThumbsUp}>
@@ -28,13 +35,14 @@ function Rooms(props){
         </View>   
       </View>
     </View>
+    </TouchableHighlight>
   )
 }
 
 function RoomsContainer(props){
   return(
     <ScrollView style={styles.roomsContainer}>
-      <Rooms roomName="Jazz" likesNum="200" thumbsUpNum="10"/>
+      <Rooms roomName="Jazz" likesNum="200" thumbsUpNum="10" {...props}/>
     </ScrollView>
   )
 }
@@ -103,7 +111,7 @@ const styles = StyleSheet.create({
 
   people: {
     width:10,
-    height:15,
+    height:10      ,
   },
 
   likes: {
