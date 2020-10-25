@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image, TouchableHighlight } from 'react-native';
 import Button from "./button";
 import RoomsList from "./RoomsList";
 
@@ -8,7 +8,12 @@ function Footer(props){
       <View style={styles.footerBox}>
             <Button button="Listen" />
             <View style={styles.line}></View>
-            <Button button="DJ"/>
+            <TouchableHighlight
+              activeOpacity={0.6}
+              underlayColor="#DDDDDD"
+              onPress={() => props.navigation.navigate("StartDJ")}>
+              <Button button="DJ"/>
+            </TouchableHighlight>
       </View>
     )
   }

@@ -10,7 +10,7 @@ function Header(props){
   const styles = StyleSheet.create({
     header: {
       fontSize:40, 
-      marginTop:60,
+      marginTop:10,
       marginBottom:30,
       marginLeft: 20,
       color: "#f9f9f9",
