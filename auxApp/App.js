@@ -7,6 +7,6 @@ import InsideRoom from './src/insideRoom';
 
 export default function App() {
   return (
-    <RoomsList/>
+    <InsideRoom/>
   )
 }

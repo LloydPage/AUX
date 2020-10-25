@@ -1,23 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, Image} from 'react-native';
+import { StyleSheet, Text, View, ScrollView, ImageBackground} from 'react-native';
 import Button from './button';
 
 function SignInPage(props){
   return(
     <View style={styles.container}>
+      <ImageBackground source={{uri:"https://i.pinimg.com/originals/77/20/f2/7720f2df7e34af2423f181d78be591be.jpg"}} style={styles.container}>
         <Title/>
-        <Button button="Log In"/>
-        <Button button="Sign Up"/>
-      </View>
+          <Button button="Log In"/>
+          <Button button="Sign Up"/>
+      </ImageBackground>
+    </View>
     )
 }
 
 function Title(){
   return(
-
-    //add logo here
-    <Text style={styles.title}> AUX </Text>
+    <Text style={styles.title}>AUX</Text>
   )
 }
 
@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#121212',
     alignItems: 'center',
     justifyContent: 'center',
+    width:'100%',
   },
   
   title: {
