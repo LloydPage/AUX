@@ -10,7 +10,7 @@ function RoomsList(props){
     <View style={styles.container}>
         <Header roomName="TEST"/>
           <RoomsContainer {...props}/>
-      <Footer/>
+      <Footer {...props}/>
       </View>
     )
 }

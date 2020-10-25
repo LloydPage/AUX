@@ -29,7 +29,7 @@ function InsideRoom(props){
         <LikeButton/>
         </TouchableHighlight>
       </View>
-      <Footer/>
+      <Footer {...props}/>
     </View>
     )
 }
