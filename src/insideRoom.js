@@ -22,7 +22,12 @@ function InsideRoom(props){
       </View>
       <View style={styles.sideToSide}>
         <Info listenersNum={listenersNum} likesNum={likesNum}/>
+        <TouchableHighlight
+          activeOpacity={0.6}
+          underlayColor="#DDDDDD"
+          onPress={() => setLikesNum(likesNum+1)}>
         <LikeButton/>
+        </TouchableHighlight>
       </View>
       <Footer/>
     </View>
