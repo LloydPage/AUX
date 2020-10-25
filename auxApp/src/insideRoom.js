@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { StyleSheet, Text, View, ScrollView, Image} from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image, TouchableHighlight} from 'react-native';
 import Header from './header';
 import Footer from './footer';
 import Button from './button';
@@ -8,7 +8,7 @@ function InsideRoom(props){
 
   const[currMusicName, setCurrMusicName] = useState("BACKEND")
   const[currMusician, setCurrMusician] = useState("BACKEND")
-  const[listenersNum, setListenersNum] = useState("123")
+  const[listenersNum, setListenersNum] = useState(123)
   const[likesNum, setLikesNum] = useState(0)
 
   return(
@@ -22,9 +22,14 @@ function InsideRoom(props){
       </View>
       <View style={styles.sideToSide}>
         <Info listenersNum={listenersNum} likesNum={likesNum}/>
+        <TouchableHighlight
+          activeOpacity={0.6}
+          underlayColor="#DDDDDD"
+          onPress={() => setLikesNum(likesNum+1)}>
         <LikeButton/>
+        </TouchableHighlight>
       </View>
-      <Footer/>
+      <Footer {...props}/>
     </View>
     )
 }
