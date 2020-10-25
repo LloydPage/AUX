@@ -8,7 +8,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 function RoomsList(props){
   return(
     <View style={styles.container}>
-        <Header roomName="TEST"/>
+        <Header roomName="Listen Now"/>
           <RoomsContainer {...props}/>
       <Footer {...props}/>
       </View>
@@ -19,7 +19,7 @@ function Rooms(props){
   return (
   <TouchableHighlight
     activeOpacity={0.6}
-    underlayColor="#DDDDDD"
+    underlayColor="#121212"
     onPress={() => props.navigation.navigate("InsideRoom")}>
 
     <View style={styles.roomsStyle}>
@@ -42,7 +42,7 @@ function Rooms(props){
 function RoomsContainer(props){
   return(
     <ScrollView style={styles.roomsContainer}>
-      <Rooms roomName="Jazz" likesNum="200" thumbsUpNum="10" {...props}/>
+      <Rooms roomName="pwang9830" likesNum="200" thumbsUpNum="10" {...props}/>
     </ScrollView>
   )
 }

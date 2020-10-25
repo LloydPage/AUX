@@ -12,7 +12,7 @@ function SignInPage(props){
         <Title/>
           <TouchableHighlight
             activeOpacity={0.6}
-            underlayColor="#DDDDDD"
+            underlayColor="#none"
             onPress={() => props.navigation.navigate("RoomsList")}>
             <Button button="Log In"/>
           </TouchableHighlight>

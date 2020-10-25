@@ -10,7 +10,7 @@ function Footer(props){
             <View style={styles.line}></View>
             <TouchableHighlight
               activeOpacity={0.6}
-              underlayColor="#DDDDDD"
+              underlayColor="#292929"
               onPress={() => props.navigation.navigate("StartDJ")}>
               <Button button="DJ"/>
             </TouchableHighlight>

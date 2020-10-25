@@ -6,15 +6,15 @@ import Button from './button';
 // props i.e.: {username: "John Smith"}
 function InsideRoom(props){
 
-  const[currMusicName, setCurrMusicName] = useState("BACKEND")
-  const[currMusician, setCurrMusician] = useState("BACKEND")
+  const[currMusicName, setCurrMusicName] = useState("Sierra Leone")
+  const[currMusician, setCurrMusician] = useState("Frank Ocean")
   const[listenersNum, setListenersNum] = useState(123)
   const[likesNum, setLikesNum] = useState(0)
 
   return(
     //Body
     <View style={styles.container}>
-      <Header roomName="BACKEND"/>
+      <Header roomName="PWANG9830"/>
       <View mainContent={styles.body}>
         <Text style={styles.bodyText}>You are listening to...</Text>
         <View style={styles.imageBox}><Image source={{uri:'https://wallpapercave.com/wp/wp5986989.jpg'}} style={styles.mainImage}/></View>
@@ -24,7 +24,7 @@ function InsideRoom(props){
         <Info listenersNum={listenersNum} likesNum={likesNum}/>
         <TouchableHighlight
           activeOpacity={0.6}
-          underlayColor="#DDDDDD"
+          underlayColor="#121212"
           onPress={() => setLikesNum(likesNum+1)}>
         <LikeButton/>
         </TouchableHighlight>
