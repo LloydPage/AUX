@@ -1,12 +1,12 @@
-import { FiraSansExtraCondensed_100Thin } from '@expo-google-fonts/dev';
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
 import Button from "./button";
+import RoomsList from "./RoomsList";
 
 function Footer(props){
     return(
       <View style={styles.footerBox}>
-            <Button button="Listen"/>
+            <Button button="Listen" />
             <View style={styles.line}></View>
             <Button button="DJ"/>
       </View>
