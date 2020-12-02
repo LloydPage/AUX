@@ -23,8 +23,7 @@ function SignInPage(props){
   const [request, response, promptAsync] = AuthSession.useAuthRequest(
     {
       responseType: AuthSession.ResponseType.Token,
-      clientId: 'e91e019530564dad91659c9df8b02519',
-      clientSecret: '785348857b804877a8d8b52748dffd98',
+      clientId: 'client_id',
       scopes: ['user-read-email', 'playlist-modify-public'],
       // In order to follow the "Authorization Code Flow" to fetch token after authorizationEndpoint
       // this must be set to false
