@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView, ImageBackground, TouchableHighlight} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import Button from './button';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -13,8 +14,6 @@ const discovery = {
     authorizationEndpoint: 'https://accounts.spotify.com/authorize',
     tokenEndpoint: 'https://accounts.spotify.com/api/token',
 };
-
-const access_token = null;
 
 function SignInPage(props){
 
@@ -38,7 +37,15 @@ function SignInPage(props){
       if (response?.type === 'success') {
         setLogInStatus('signed in');
         const { access_token } = response.params;
-        console.log(access_token);
+        const saveAccessToken = async access_token => {
+          try {
+            await AsyncStorage.setItem('accessToken', access_token);
+          } catch (error) {
+            // Error retrieving data
+            console.log(error.message);
+          }
+        };
+        saveAccessToken(access_token);
         props.navigation.navigate("RoomsList");
         }
     }, [response, props.navigation.navigate]);

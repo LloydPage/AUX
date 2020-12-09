@@ -1,11 +1,31 @@
-import React from 'react';
+import * as React from 'react';
 import { StyleSheet, Text, View, ScrollView, Image, TouchableHighlight } from 'react-native';
 import Footer from "./footer";
 import Header from "./header";
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function RoomsList(props){
+
+  React.useEffect(() => {
+      const getAccessToken = async () => {
+        try {
+          const access_token = await AsyncStorage.getItem('accessToken')
+          if(access_token !== null) {
+            // value previously stored
+            console.log(access_token);
+          } else {
+            console.log("access_token==null!");
+          }
+        } catch(e) {
+          // error reading value
+          console.log(e);
+        }
+      }
+      getAccessToken();
+    }, );
+
   return(
     <View style={styles.container}>
         <Header roomName="TEST"/>
